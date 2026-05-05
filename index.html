@@ -296,15 +296,14 @@
             transform: scale(1.05);
         }
 
+        @keyframes slowZoom {
+            from { transform: scale(1.15); }
+            to { transform: scale(1.0); }
+        }
+
         @media (prefers-reduced-motion: no-preference) {
             .hero-bg {
-                transform: scale(1.05);
                 animation: slowZoom 20s ease-out forwards;
-            }
-
-            @keyframes slowZoom {
-                from { transform: scale(1.15); }
-                to { transform: scale(1.0); }
             }
         }
 
