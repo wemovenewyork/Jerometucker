@@ -1821,9 +1821,16 @@
                         <h3>Tell us about your event</h3>
                     </div>
 
-                    <!-- Replace YOUR_FORM_ID with the actual Formspree endpoint after creating a free account at formspree.io -->
-                    <form id="bookingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <!--
+                        Form submissions go to romeyromethechefexperience@gmail.com via FormSubmit.co.
+                        On the FIRST submission, FormSubmit will email that address an activation link
+                        that must be clicked once to confirm. After that, every submission arrives in the
+                        inbox automatically. No account or API key required.
+                    -->
+                    <form id="bookingForm" action="https://formsubmit.co/ajax/romeyromethechefexperience@gmail.com" method="POST" novalidate>
                         <input type="hidden" name="_subject" value="New Booking Inquiry — Romey Rome The Chef">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
 
                         <div class="form-group">
                             <label for="name">Name</label>
