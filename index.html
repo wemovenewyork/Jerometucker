@@ -1173,6 +1173,24 @@
             color: var(--text-muted);
         }
 
+        .footer-credit {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-credit a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 1px dotted rgba(200, 106, 44, 0.3);
+            padding-bottom: 1px;
+        }
+
+        .footer-credit a:hover { color: var(--accent-copper); }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 960px) {
             nav ul li:not(.nav-cta) { display: none; }
@@ -2037,6 +2055,10 @@
         </div>
         <div class="footer-bottom">
             <div>&copy; 2015&ndash;2026 Jerome Tucker &mdash; All Rights Reserved</div>
+            <div class="footer-credit">
+                <span>Designed by <a href="https://www.instagram.com/wemovenewyork/" target="_blank" rel="noopener">@wemovenewyork</a></span>
+                <span>Powered by <a href="https://futreeng.com" target="_blank" rel="noopener">FutreEng.com</a></span>
+            </div>
             <div>@romeyromethechef</div>
         </div>
     </footer>
