@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Jerome Tucker | Romey Rome The Chef — Bronx, NY Traveling Celebrity Chef</title>
+    <meta name="description" content="Book Jerome Tucker (Romey Rome) — Bronx, NY based traveling celebrity chef and Bobby Brown Foods Ambassador. Private chef, catering, Dinner for Two, and signature to-go plates. $1,200 minimum.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-espresso: #241B15;
+            --bg-olive: #3A4731;
+            --bg-deep: #1A130F;
+            --accent-copper: #C86A2C;
+            --accent-copper-soft: #D88C50;
+            --text-cream: #E3DEC8;
+            --text-muted: rgba(227, 222, 200, 0.6);
+            --line-color: rgba(200, 106, 44, 0.3);
+            --line-cream: rgba(227, 222, 200, 0.15);
+
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            --font-script: 'Pinyon Script', cursive;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-espresso);
+            color: var(--text-cream);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: var(--font-serif);
+            font-weight: 400;
+        }
+
+        .script-text {
+            font-family: var(--font-script);
+            color: var(--accent-copper);
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .micro-label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent-copper);
+        }
+
+        .body-copy {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-cream);
+            font-weight: 300;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        section { position: relative; }
+
+        /* ===== UNIVERSAL BUTTON ===== */
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: var(--accent-copper);
+            color: var(--bg-espresso);
+            padding: 1.1rem 2.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--accent-copper);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-book:hover {
+            background: var(--accent-copper-soft);
+            border-color: var(--accent-copper-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200, 106, 44, 0.25);
+        }
+
+        .btn-book.outline {
+            background: transparent;
+            color: var(--accent-copper);
+        }
+
+        .btn-book.outline:hover {
+            background: var(--accent-copper);
+            color: var(--bg-espresso);
+        }
+
+        .btn-book .arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-book:hover .arrow { transform: translateX(4px); }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.25rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(36, 27, 21, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line-cream);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo .flank {
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            opacity: 0.7;
+            color: var(--text-cream);
+        }
+
+        .nav-logo .center {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-cream);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.25rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav a:not(.btn-book) {
+            color: var(--text-cream);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:not(.btn-book):hover { color: var(--accent-copper); }
+
+        .nav-book-btn {
+            padding: 0.85rem 1.75rem !important;
+            font-size: 0.65rem !important;
+        }
+
+        /* ===== HERO ===== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 4rem 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1577106263724-2c8e03bfe9ce?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 30%;
+            z-index: 1;
+            transform: scale(1.05);
+            animation: slowZoom 20s ease-out forwards;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1.15); }
+            to { transform: scale(1.0); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(36,27,21,0.5) 0%, rgba(36,27,21,0.78) 65%, rgba(36,27,21,1) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 900px;
+            padding: 0 1.5rem;
+        }
+
+        .hero-flank-group {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-flank-group .icon {
+            width: 24px;
+            height: 30px;
+            border: 1px solid var(--accent-copper);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            padding: 4px;
+        }
+
+        .hero-flank-group .icon div {
+            background-color: var(--accent-copper);
+            height: 100%;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 0;
+        }
+
+        .hero-script {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            margin-top: -3rem;
+            margin-bottom: 1.5rem;
+            transform: rotate(-5deg);
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            max-width: 540px;
+            margin: 0 auto 1rem auto;
+        }
+
+        .hero-location {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: 3rem;
+        }
+
+        .hero-location span {
+            color: var(--accent-copper-soft);
+            margin: 0 0.5rem;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-trust-strip {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .hero-trust-strip .divider {
+            width: 4px;
+            height: 4px;
+            background: var(--accent-copper);
+            border-radius: 50%;
+        }
+
+        .hero-trust-strip strong {
+            color: var(--text-cream);
+            font-weight: 400;
+        }
+
+        /* ===== STICKY MOBILE CTA ===== */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            padding: 1rem;
+            background: rgba(26, 19, 15, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--line-color);
+        }
+
+        .mobile-cta .btn-book {
+            width: 100%;
+            padding: 1.15rem;
+        }
+
+        /* ===== BOOKING SNAPSHOT ===== */
+        #booking-snapshot {
+            background-color: var(--bg-deep);
+            padding: 5vh 0;
+            border-bottom: 1px solid var(--line-cream);
+        }
+
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--line-cream);
+            border: 1px solid var(--line-cream);
+        }
+
+        .snapshot-item {
+            background: var(--bg-deep);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .snapshot-item .micro-label {
+            margin-bottom: 0.85rem;
+            display: block;
+        }
+
+        .snapshot-item .term-value {
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            letter-spacing: 0.04em;
+            color: var(--text-cream);
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+
+        .snapshot-item .term-note {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* ===== OFFERINGS ===== */
+        #offerings {
+            background-color: var(--bg-olive);
+            padding: 12vh 0 10vh 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header .script-text {
+            font-size: clamp(3.5rem, 6vw, 5rem);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-3deg);
+            z-index: 2;
+            opacity: 0.85;
+            white-space: nowrap;
+        }
+
+        .section-header p {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-cream);
+            margin-top: 1.5rem;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--line-cream);
+            border-left: 1px solid var(--line-cream);
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            border-right: 1px solid var(--line-cream);
+            border-bottom: 1px solid var(--line-cream);
+            padding: 3rem 2.5rem;
+            position: relative;
+            transition: background-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            background-color: rgba(36, 27, 21, 0.3);
+        }
+
+        .service-card .roman {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--accent-copper);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .service-card h4 {
+            font-size: 1.75rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.4rem;
+            color: var(--text-cream);
+        }
+
+        .service-card .tagline {
+            font-family: var(--font-script);
+            color: var(--accent-copper-soft);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .service-card .desc {
+            font-size: 0.85rem;
+            line-height: 1.75;
+            color: var(--text-cream);
+            font-weight: 300;
+            margin-bottom: 1.75rem;
+            opacity: 0.9;
+        }
+
+        .formats {
+            list-style: none;
+            border-top: 1px solid var(--line-cream);
+            padding-top: 1.25rem;
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+        }
+
+        .formats li {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-cream);
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0.85;
+        }
+
+        .formats li::before {
+            content: '';
+            width: 6px;
+            height: 1px;
+            background-color: var(--accent-copper);
+            flex-shrink: 0;
+        }
+
+        .service-card-cta {
+            color: var(--accent-copper);
+            text-decoration: none;
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 0.85rem;
+            margin-top: auto;
+        }
+
+        .service-card-cta:hover {
+            gap: 1rem;
+            color: var(--accent-copper-soft);
+        }
+
+        .offerings-cta-row {
+            text-align: center;
+            padding-top: 2rem;
+        }
+
+        /* ===== RESERVE ===== */
+        #reserve {
+            padding: 12vh 0;
+            background-color: var(--bg-espresso);
+            position: relative;
+        }
+
+        .reserve-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 6rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reserve-side {
+            position: sticky;
+            top: 8rem;
+        }
+
+        .reserve-side h2 {
+            font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            line-height: 1.05;
+            margin-bottom: 1rem;
+        }
+
+        .reserve-side .script-text {
+            font-size: 3rem;
+            display: block;
+            margin: 0.5rem 0 2rem 0;
+            transform: rotate(-3deg);
+        }
+
+        .reserve-side .body-copy {
+            margin-bottom: 2.5rem;
+        }
+
+        .reserve-side .quick-info {
+            border-top: 1px solid var(--line-cream);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .quick-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .quick-info-row .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .quick-info-row .value {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--text-cream);
+            text-align: right;
+        }
+
+        .reserve-form-wrap {
+            background: rgba(26, 19, 15, 0.5);
+            border: 1px solid var(--line-cream);
+            padding: 3rem 2.5rem;
+            position: relative;
+        }
+
+        .reserve-form-wrap::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 3px;
+            background: var(--accent-copper);
+        }
+
+        .form-header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--line-cream);
+        }
+
+        .form-header .micro-label {
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-header h3 {
+            font-size: 1.65rem;
+            letter-spacing: 0.05em;
+            color: var(--text-cream);
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 1.5rem;
+        }
+
+        .form-group { position: relative; }
+        .form-group.full { grid-column: 1 / -1; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-copper);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--line-color);
+            padding: 0.5rem 0;
+            color: var(--text-cream);
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            line-height: 1.6;
+        }
+
+        input::placeholder, select::placeholder, textarea::placeholder {
+            color: var(--text-muted);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+        }
+
+        select { color: var(--text-cream); }
+        select:invalid { color: var(--text-muted); font-style: italic; }
+        select option {
+            background-color: var(--bg-espresso);
+            color: var(--text-cream);
+            font-style: normal;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-bottom-color: var(--accent-copper);
+        }
+
+        button.submit-btn {
+            grid-column: 1 / -1;
+            background: var(--accent-copper);
+            border: 1px solid var(--accent-copper);
+            color: var(--bg-espresso);
+            padding: 1.35rem 0;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 1rem;
+        }
+
+        button.submit-btn:hover {
+            background: var(--accent-copper-soft);
+            border-color: var(--accent-copper-soft);
+        }
+
+        .booking-fineprint {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            line-height: 1.8;
+        }
+
+        /* ===== ABOUT ===== */
+        #about {
+            padding: 12vh 0;
+            background-color: var(--bg-deep);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 6vw;
+            align-items: center;
+        }
+
+        .about-text {
+            max-width: 520px;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2.25rem, 4vw, 3.25rem);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text .script-text {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 2.5rem;
+            transform: rotate(-3deg);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            line-height: 1.85;
+        }
+
+        .about-text .cta-row {
+            margin-top: 2.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 70vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85) contrast(1.05);
+        }
+
+        .about-image-caption {
+            position: absolute;
+            bottom: 1.5rem;
+            right: -1.5rem;
+            transform: rotate(-90deg);
+            transform-origin: bottom left;
+            font-size: 1.5rem;
+        }
+
+        /* ===== CREDENTIALS ===== */
+        #credentials {
+            background-color: var(--bg-espresso);
+            padding: 6vh 0;
+            border-top: 1px solid var(--line-cream);
+            border-bottom: 1px solid var(--line-cream);
+        }
+
+        .creds-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .cred-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .cred-item .num {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 3.5rem;
+            color: var(--accent-copper);
+            line-height: 1;
+        }
+
+        .cred-item .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-cream);
+        }
+
+        /* ===== FINAL CTA ===== */
+        #final-cta {
+            padding: 14vh 0;
+            background: linear-gradient(135deg, var(--bg-espresso) 0%, var(--bg-deep) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 60px;
+            background: var(--accent-copper);
+        }
+
+        .final-cta-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .final-cta-inner h2 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta-inner .script-text {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            display: block;
+            margin-bottom: 2.5rem;
+            transform: rotate(-3deg);
+        }
+
+        .final-cta-inner p {
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            line-height: 1.85;
+            color: var(--text-cream);
+            opacity: 0.9;
+            max-width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 5vw 2rem 5vw;
+            background-color: var(--bg-deep);
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            border-top: 1px solid var(--line-cream);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+        }
+
+        .footer-logo .script-text {
+            font-size: 1.85rem;
+            margin-left: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-top: 0.65rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--accent-copper); }
+
+        .footer-bottom {
+            border-top: 1px solid var(--line-cream);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 960px) {
+            nav ul li:not(.nav-cta) { display: none; }
+            .nav-book-btn { padding: 0.75rem 1.4rem !important; font-size: 0.6rem !important; }
+        }
+
+        @media (max-width: 900px) {
+            .reserve-layout { grid-template-columns: 1fr; gap: 3rem; }
+            .reserve-side { position: static; }
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-image { height: 50vh; min-height: 400px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 2.5rem 1.75rem; }
+            .snapshot-grid { grid-template-columns: 1fr 1fr; }
+            .creds-grid { grid-template-columns: 1fr; gap: 2rem; }
+            form { grid-template-columns: 1fr; gap: 1.75rem; }
+            .reserve-form-wrap { padding: 2rem 1.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .nav-logo .flank { display: none; }
+            .hero-flank-group { gap: 1rem; }
+            .hero-cta-group { flex-direction: column; width: 100%; }
+            .hero-cta-group .btn-book { width: 100%; }
+            .snapshot-grid { grid-template-columns: 1fr; }
+            .mobile-cta { display: block; }
+            footer { padding-bottom: 6rem; }
+            .hero-trust-strip { flex-direction: column; gap: 0.75rem; }
+            .hero-trust-strip .divider { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="nav-logo" style="text-decoration: none;">
+            <span class="flank">EST.</span>
+            <span class="center">J. Tucker</span>
+            <span class="flank">2015</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#offerings">Offerings</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="nav-cta"><a href="#reserve" class="btn-book nav-book-btn">Book Now <span class="arrow">&rarr;</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-flank-group">
+                <span class="micro-label">Chef</span>
+                <div class="icon">
+                    <div></div><div></div><div></div>
+                </div>
+                <span class="micro-label">Patron</span>
+            </div>
+            <h1 class="hero-title">Jerome Tucker</h1>
+            <span class="script-text hero-script">Romey Rome</span>
+            <p class="micro-label hero-subtitle">Traveling Celebrity Chef &bull; Bobby Brown Foods Ambassador</p>
+            <p class="hero-location">Bronx, NY <span>&bull;</span> Booked Nationwide</p>
+
+            <div class="hero-cta-group">
+                <a href="#reserve" class="btn-book">Book Your Date <span class="arrow">&rarr;</span></a>
+                <a href="#offerings" class="btn-book outline">View Experiences</a>
+            </div>
+
+            <div class="hero-trust-strip">
+                <span><strong>$1,200</strong> Min. To Book</span>
+                <span class="divider"></span>
+                <span><strong>$250</strong> Locks Your Date</span>
+                <span class="divider"></span>
+                <span>Travel Available</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING SNAPSHOT ===== -->
+    <section id="booking-snapshot">
+        <div class="container">
+            <div class="snapshot-grid">
+                <div class="snapshot-item">
+                    <span class="micro-label">Minimum</span>
+                    <div class="term-value">$1,200</div>
+                    <div class="term-note">To Book</div>
+                </div>
+                <div class="snapshot-item">
+                    <span class="micro-label">Deposit</span>
+                    <div class="term-value">$250</div>
+                    <div class="term-note">Non-Refundable</div>
+                </div>
+                <div class="snapshot-item">
+                    <span class="micro-label">Service Area</span>
+                    <div class="term-value">Nationwide</div>
+                    <div class="term-note">Travel Out of State</div>
+                </div>
+                <div class="snapshot-item">
+                    <span class="micro-label">Based</span>
+                    <div class="term-value">Bronx, NY</div>
+                    <div class="term-note">New York City</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OFFERINGS ===== -->
+    <section id="offerings">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Experience</h2>
+                <span class="script-text">Offerings</span>
+                <p>Four ways to book Romey Rome. Every format built around the moment you're trying to create.</p>
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <span class="roman">i.</span>
+                    <h4>The Catering Experience</h4>
+                    <span class="tagline">For the gathering</span>
+                    <p class="desc">Birthdays to brand activations. Southern-inspired menus scaled to the size and tone of your event &mdash; five formats, one consistent execution.</p>
+                    <ul class="formats">
+                        <li>Pick Up</li>
+                        <li>Drop Off</li>
+                        <li>Drop Off, Set Up &amp; Serve</li>
+                        <li>Cook On Site</li>
+                        <li>Travel Out Of State</li>
+                    </ul>
+                    <a href="#reserve" class="service-card-cta" data-experience="catering">Book Catering <span>&rarr;</span></a>
+                </div>
+
+                <div class="service-card">
+                    <span class="roman">ii.</span>
+                    <h4>Dinner For Two</h4>
+                    <span class="tagline">Two seats, one evening</span>
+                    <p class="desc">The signature experience. An intimate, multi-course evening prepared in front of you &mdash; for anniversaries, first impressions, or any night that deserves more than a reservation.</p>
+                    <ul class="formats">
+                        <li>Cook On Site</li>
+                        <li>Travel Out Of State</li>
+                        <li>Cooking Lessons</li>
+                    </ul>
+                    <a href="#reserve" class="service-card-cta" data-experience="dinner-for-two">Book Dinner For Two <span>&rarr;</span></a>
+                </div>
+
+                <div class="service-card">
+                    <span class="roman">iii.</span>
+                    <h4>The Private Chef Experience</h4>
+                    <span class="tagline">For eight or fewer</span>
+                    <p class="desc">Reserved for parties of eight or less. A bespoke, on-site engagement built around your guests, your dietary needs, and the feeling you want the night to leave behind.</p>
+                    <ul class="formats">
+                        <li>Cook On Site (Only)</li>
+                        <li>Personal Intimate Service &mdash; 8 or Less</li>
+                        <li>Travel Out Of State</li>
+                    </ul>
+                    <a href="#reserve" class="service-card-cta" data-experience="private-chef">Book Private Chef <span>&rarr;</span></a>
+                </div>
+
+                <div class="service-card">
+                    <span class="roman">iv.</span>
+                    <h4>Signature To-Go Plates</h4>
+                    <span class="tagline">The plate, traveling</span>
+                    <p class="desc">The flavors of a Romey Rome event, packaged for pick-up. Released through scheduled drops, with pop-up shop appearances at upcoming events.</p>
+                    <ul class="formats">
+                        <li>Pick Up Plates</li>
+                        <li>Pop-Up Shops &mdash; Next Event</li>
+                    </ul>
+                    <a href="#reserve" class="service-card-cta" data-experience="togo">Reserve Plates <span>&rarr;</span></a>
+                </div>
+
+            </div>
+
+            <div class="offerings-cta-row">
+                <a href="#reserve" class="btn-book">Start Your Booking <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESERVE ===== -->
+    <section id="reserve">
+        <div class="container">
+            <div class="reserve-layout">
+
+                <div class="reserve-side">
+                    <span class="micro-label">Bookings</span>
+                    <h2>Secure Your Date</h2>
+                    <span class="script-text">Inquiries</span>
+                    <p class="body-copy">
+                        Tell us about the occasion. Every booking starts with a conversation &mdash; once we understand the moment you're creating, we'll respond with availability, pricing, and what's needed to lock the date.
+                    </p>
+
+                    <div class="quick-info">
+                        <div class="quick-info-row">
+                            <span class="label">Booking Minimum</span>
+                            <span class="value">$1,200</span>
+                        </div>
+                        <div class="quick-info-row">
+                            <span class="label">Date Deposit</span>
+                            <span class="value">$250 non-refundable</span>
+                        </div>
+                        <div class="quick-info-row">
+                            <span class="label">Travel</span>
+                            <span class="value">Out of State Available</span>
+                        </div>
+                        <div class="quick-info-row">
+                            <span class="label">Response Time</span>
+                            <span class="value">Within 48 Hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reserve-form-wrap">
+                    <div class="form-header">
+                        <span class="micro-label">Booking Inquiry</span>
+                        <h3>Tell us about your event</h3>
+                    </div>
+
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Primary contact" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" placeholder="(___) ___-____" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Requested Date</label>
+                            <input type="text" id="date" placeholder="MM / DD / YYYY">
+                        </div>
+                        <div class="form-group full">
+                            <label for="experience">Experience</label>
+                            <select id="experience" name="experience" required>
+                                <option value="" disabled selected>Select your experience</option>
+                                <option value="catering">Catering Experience</option>
+                                <option value="dinner-for-two">Dinner For Two</option>
+                                <option value="private-chef">Private Chef (8 or Less)</option>
+                                <option value="togo">Signature To-Go Plates</option>
+                                <option value="undecided">Not Sure Yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Guest Count</label>
+                            <select id="guests" required>
+                                <option value="" disabled selected>How many?</option>
+                                <option value="2">Dinner For Two</option>
+                                <option value="3-8">3 &ndash; 8 Guests</option>
+                                <option value="9-25">9 &ndash; 25 Guests</option>
+                                <option value="26-75">26 &ndash; 75 Guests</option>
+                                <option value="75+">75+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <select id="location" required>
+                                <option value="" disabled selected>Where?</option>
+                                <option value="nyc">New York City Metro</option>
+                                <option value="tri-state">Tri-State Area</option>
+                                <option value="out-of-state">Out of State (Travel)</option>
+                                <option value="pickup">Pick Up / Drop Off Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="details">The Occasion &amp; Details</label>
+                            <textarea id="details" placeholder="What are we celebrating? Any dietary restrictions? What do you want the evening to feel like?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Request Reservation &rarr;</button>
+                        <p class="booking-fineprint">
+                            $1,200 minimum to book &nbsp;&bull;&nbsp; $250 non-refundable deposit secures your date
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="micro-label">The Chef</span>
+                    <h2>Meet Jerome</h2>
+                    <span class="script-text">Romey Rome</span>
+                    <p class="body-copy">
+                        Born in Manhattan and raised between Bamberg, South Carolina and Norwich, Connecticut, Jerome Tucker &mdash; known to a 32,000-strong following as Romey Rome &mdash; built his palate at the elbow of his mother and aunts in a Southern kitchen.
+                    </p>
+                    <p class="body-copy">
+                        The journey moved from home cook to public name in 2008. By 2015, the dinners had become events. Today, as a Bobby Brown Foods Culinary Ambassador and traveling celebrity chef out of the Bronx, Romey Rome serves Southern-inspired cuisine that reflects the full geography of his upbringing &mdash; New York energy, Carolina soul, Connecticut steadiness.
+                    </p>
+                    <div class="cta-row">
+                        <a href="#reserve" class="btn-book">Book the Chef <span class="arrow">&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop" alt="Plated dish detail in moody, low light">
+                    <div class="script-text about-image-caption">A Southern Soul</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CREDENTIALS ===== -->
+    <section id="credentials">
+        <div class="container">
+            <div class="creds-grid">
+                <div class="cred-item">
+                    <div class="num">32K+</div>
+                    <div class="label">Instagram Following</div>
+                </div>
+                <div class="cred-item">
+                    <div class="num">10+</div>
+                    <div class="label">Years Building the Brand</div>
+                </div>
+                <div class="cred-item">
+                    <div class="num">BBF</div>
+                    <div class="label">Culinary Ambassador</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section id="final-cta">
+        <div class="final-cta-inner">
+            <span class="micro-label">Ready When You Are</span>
+            <h2>The Table Is Set</h2>
+            <span class="script-text">Reserve</span>
+            <p>Dates fill quickly &mdash; especially weekends and holiday windows. Send your inquiry now and we'll respond within 48 hours with everything you need to lock the date.</p>
+            <a href="#reserve" class="btn-book">Book Your Date <span class="arrow">&rarr;</span></a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">
+                    Jerome Tucker <span class="script-text">Romey Rome</span>
+                </div>
+                <div class="footer-tagline">Bronx, NY &bull; Traveling Celebrity Chef</div>
+            </div>
+            <div class="footer-links">
+                <a href="#reserve">Book Now</a>
+                <a href="#offerings">Offerings</a>
+                <a href="https://www.instagram.com/romeyromethechef/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://bobbybrownfoods.com/culinary-ambassadors/chef-jerome-tucker/" target="_blank" rel="noopener">BBF Ambassador</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2026 Jerome Tucker &mdash; All Rights Reserved</div>
+            <div>@romeyromethechef</div>
+        </div>
+    </footer>
+
+    <!-- ===== STICKY MOBILE CTA ===== -->
+    <div class="mobile-cta">
+        <a href="#reserve" class="btn-book">Book Your Date <span class="arrow">&rarr;</span></a>
+    </div>
+
+    <script>
+        // Pre-fill the experience dropdown when user clicks a service card CTA
+        document.querySelectorAll('.service-card-cta').forEach(link => {
+            link.addEventListener('click', function() {
+                const exp = this.getAttribute('data-experience');
+                if (exp) {
+                    setTimeout(() => {
+                        const select = document.getElementById('experience');
+                        if (select) {
+                            select.value = exp;
+                        }
+                    }, 600);
+                }
+            });
+        });
+
+        // Hide mobile CTA when reserve form is in view
+        const reserveSection = document.getElementById('reserve');
+        const mobileCta = document.querySelector('.mobile-cta');
+        if ('IntersectionObserver' in window && reserveSection && mobileCta) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    mobileCta.style.opacity = entry.isIntersecting ? '0' : '1';
+                    mobileCta.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+                });
+            }, { threshold: 0.3 });
+            observer.observe(reserveSection);
+            mobileCta.style.transition = 'opacity 0.3s ease';
+        }
+    </script>
+
+</body>
+</html>
