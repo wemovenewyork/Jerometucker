@@ -501,14 +501,12 @@
         }
 
         .section-header .script-text {
-            font-size: clamp(3.5rem, 6vw, 5rem);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-3deg);
-            z-index: 2;
-            opacity: 0.85;
-            white-space: nowrap;
+            font-size: clamp(2.75rem, 4.5vw, 3.75rem);
+            display: block;
+            transform: rotate(-3deg);
+            margin-top: 0.75rem;
+            line-height: 1.1;
+            font-weight: 500;
         }
 
         .section-header p {
@@ -1403,18 +1401,6 @@
             padding: 12vh 0;
             background-color: var(--bg-espresso);
             border-top: 1px solid var(--line-cream);
-        }
-
-        #faq .section-header .script-text {
-            position: static;
-            display: block;
-            transform: rotate(-3deg);
-            font-size: clamp(2.75rem, 4.5vw, 3.75rem);
-            margin-top: 0.75rem;
-            line-height: 1.1;
-            opacity: 1;
-            white-space: normal;
-            font-weight: 500;
         }
 
         .faq-list {
