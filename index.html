@@ -1523,6 +1523,85 @@
             .faq-question { font-size: 1.05rem; padding: 1.5rem 0; }
             .faq-question .icon { width: 18px; height: 18px; }
         }
+
+        /* ===== ANIMATIONS ===== */
+        @media (prefers-reduced-motion: no-preference) {
+            .js-on .reveal {
+                opacity: 0;
+                transform: translateY(24px);
+                transition: opacity 0.9s ease, transform 0.9s ease;
+                will-change: opacity, transform;
+            }
+            .js-on .reveal.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .js-on .stagger > * {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.7s ease, transform 0.7s ease;
+            }
+            .js-on .stagger.is-visible > * {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .js-on .stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+            .js-on .stagger.is-visible > *:nth-child(2) { transition-delay: 0.13s; }
+            .js-on .stagger.is-visible > *:nth-child(3) { transition-delay: 0.21s; }
+            .js-on .stagger.is-visible > *:nth-child(4) { transition-delay: 0.29s; }
+            .js-on .stagger.is-visible > *:nth-child(5) { transition-delay: 0.37s; }
+            .js-on .stagger.is-visible > *:nth-child(6) { transition-delay: 0.45s; }
+            .js-on .stagger.is-visible > *:nth-child(7) { transition-delay: 0.53s; }
+            .js-on .stagger.is-visible > *:nth-child(8) { transition-delay: 0.61s; }
+
+            /* Hero entrance */
+            .js-on .hero-content > * {
+                opacity: 0;
+                animation: heroFadeUp 0.9s ease forwards;
+            }
+            .js-on .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+            .js-on .hero-content > *:nth-child(2) { animation-delay: 0.22s; }
+            .js-on .hero-content > *:nth-child(3) { animation-delay: 0.34s; }
+            .js-on .hero-content > *:nth-child(4) { animation-delay: 0.46s; }
+            .js-on .hero-content > *:nth-child(5) { animation-delay: 0.58s; }
+            .js-on .hero-content > *:nth-child(6) { animation-delay: 0.7s; }
+            .js-on .hero-content > *:nth-child(7) { animation-delay: 0.85s; }
+
+            @keyframes heroFadeUp {
+                from { opacity: 0; transform: translateY(18px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            /* Subtle lift on cards */
+            .service-card { transition: background-color 0.4s ease, transform 0.4s ease, border-color 0.4s ease; }
+            .service-card:hover { transform: translateY(-3px); }
+
+            .gallery-item { transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.4s ease; }
+            .gallery-item:hover { transform: translateY(-3px); }
+
+            /* Snapshot tiles + cred numbers — gentle hover */
+            .snapshot-item { transition: background-color 0.3s ease; }
+            .snapshot-item:hover { background-color: rgba(36, 27, 21, 0.5); }
+
+            /* Submit button shimmer on hover */
+            button.submit-btn {
+                position: relative;
+                overflow: hidden;
+            }
+            button.submit-btn::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+                transition: left 0.7s ease;
+                pointer-events: none;
+            }
+            button.submit-btn:hover::after { left: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -1578,7 +1657,7 @@
     <!-- ===== BOOKING SNAPSHOT ===== -->
     <section id="booking-snapshot">
         <div class="container">
-            <div class="snapshot-grid">
+            <div class="snapshot-grid stagger">
                 <div class="snapshot-item">
                     <span class="micro-label">Minimum</span>
                     <div class="term-value">$1,200</div>
@@ -1606,13 +1685,13 @@
     <!-- ===== OFFERINGS ===== -->
     <section id="offerings">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Choose Your Experience</h2>
                 <span class="script-text" aria-hidden="true">Offerings</span>
                 <p>Four ways to book Romey Rome. Every format built around the moment you're trying to create.</p>
             </div>
 
-            <div class="services-grid">
+            <div class="services-grid stagger">
 
                 <div class="service-card">
                     <span class="roman">i.</span>
@@ -1678,13 +1757,13 @@
     <!-- ===== GALLERY ===== -->
     <section id="gallery">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Selected Plates</h2>
                 <span class="script-text" aria-hidden="true">The Plate</span>
                 <p>A working gallery of signature dishes &mdash; Southern foundations, Romey Rome execution. Photos to drop in here.</p>
             </div>
 
-            <div class="gallery-grid">
+            <div class="gallery-grid stagger">
                 <div class="gallery-item span-2-cols span-2-rows feature-mobile">
                     <div class="gallery-placeholder">
                         <div class="frame-icon">i.</div>
@@ -1908,7 +1987,7 @@
     <!-- ===== ABOUT ===== -->
     <section id="about">
         <div class="container">
-            <div class="about-grid">
+            <div class="about-grid reveal">
                 <div class="about-text">
                     <span class="micro-label">The Chef</span>
                     <h2>Meet Jerome</h2>
@@ -1934,7 +2013,7 @@
     <!-- ===== CREDENTIALS ===== -->
     <section id="credentials">
         <div class="container">
-            <div class="creds-grid">
+            <div class="creds-grid stagger">
                 <div class="cred-item">
                     <div class="num">32K+</div>
                     <div class="label">Instagram Following</div>
@@ -1967,13 +2046,13 @@
     <!-- ===== FAQ ===== -->
     <section id="faq">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Frequently Asked</h2>
                 <span class="script-text" aria-hidden="true">Questions</span>
                 <p>The booking, the menu, the logistics &mdash; the things people ask before they reach out.</p>
             </div>
 
-            <div class="faq-list">
+            <div class="faq-list stagger">
                 <div class="faq-item">
                     <button type="button" class="faq-question" aria-expanded="false">
                         How far in advance should I book?
@@ -2051,7 +2130,7 @@
 
     <!-- ===== FINAL CTA ===== -->
     <section id="final-cta">
-        <div class="final-cta-inner">
+        <div class="final-cta-inner reveal">
             <span class="micro-label">Ready When You Are</span>
             <h2>The Table Is Set</h2>
             <span class="script-text" aria-hidden="true">Reserve</span>
@@ -2091,6 +2170,26 @@
     </div>
 
     <script>
+        // Mark JS available — gates the entrance/scroll animations so no-JS users still see content
+        document.documentElement.classList.add('js-on');
+
+        // Scroll-triggered reveal & stagger
+        if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            document.querySelectorAll('.reveal, .stagger').forEach(el => revealObserver.observe(el));
+        } else {
+            // Reduced motion or no IO support — show everything immediately
+            document.querySelectorAll('.reveal, .stagger').forEach(el => el.classList.add('is-visible'));
+        }
+
         // Pre-fill the experience dropdown when user clicks a service card CTA
         document.querySelectorAll('.service-card-cta').forEach(link => {
             link.addEventListener('click', function() {
