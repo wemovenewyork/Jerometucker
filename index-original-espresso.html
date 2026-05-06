@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0A0A0A">
     <title>Book Jerome Tucker | Romey Rome The Chef — Bronx, NY Traveling Celebrity Chef</title>
     <meta name="description" content="Book Jerome Tucker (Romey Rome) — Bronx, NY based traveling celebrity chef and Bobby Brown Foods Ambassador. Private chef, catering, Dinner for Two, and signature to-go plates. $1,200 minimum.">
 
@@ -99,30 +98,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
 
     <style>
-        /*
-          PALETTE: Black / Gold / White (active)
-          Original Espresso / Olive / Copper palette preserved in /index-original-espresso.html
-          To revert: rename index-original-espresso.html → index.html
-        */
         :root {
-            /* Backgrounds (variable names retained from espresso palette for cascade compatibility — values are now black) */
-            --bg-espresso: #0A0A0A;
-            --bg-olive: #181818;
-            --bg-deep: #050505;
+            --bg-espresso: #241B15;
+            --bg-olive: #3A4731;
+            --bg-deep: #1A130F;
+            --accent-copper: #C86A2C;
+            --accent-copper-soft: #D88C50;
+            --text-cream: #E3DEC8;
+            --text-muted: rgba(227, 222, 200, 0.6);
+            --line-color: rgba(200, 106, 44, 0.3);
+            --line-cream: rgba(227, 222, 200, 0.15);
 
-            /* Accents (copper → gold) */
-            --accent-copper: #C9A961;
-            --accent-copper-soft: #D9BD7C;
-
-            /* Text (cream → white) */
-            --text-cream: #FFFFFF;
-            --text-muted: rgba(255, 255, 255, 0.55);
-
-            /* Lines */
-            --line-color: rgba(201, 169, 97, 0.3);
-            --line-cream: rgba(255, 255, 255, 0.1);
-
-            /* Fonts (unchanged) */
             --font-serif: 'Cormorant Garamond', serif;
             --font-sans: 'Inter', sans-serif;
             --font-script: 'Pinyon Script', cursive;
@@ -208,7 +194,7 @@
             background: var(--accent-copper-soft);
             border-color: var(--accent-copper-soft);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(201, 169, 97, 0.25);
+            box-shadow: 0 8px 24px rgba(200, 106, 44, 0.25);
         }
 
         .btn-book.outline {
@@ -239,7 +225,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.85);
+            background: rgba(36, 27, 21, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--line-cream);
@@ -306,7 +292,6 @@
             background-image: url('/images/jerome-tucker.png');
             background-size: cover;
             background-position: center top;
-            filter: brightness(0.85) contrast(1.05);
             z-index: 1;
             transform: scale(1.05);
         }
@@ -316,7 +301,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, transparent 30%, rgba(5, 5, 5, 0.5) 100%);
+            background: radial-gradient(ellipse at center, transparent 30%, rgba(26, 19, 15, 0.5) 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -335,7 +320,7 @@
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.82) 60%, rgba(10,10,10,1) 100%);
+            background: linear-gradient(to bottom, rgba(36,27,21,0.65) 0%, rgba(36,27,21,0.82) 55%, rgba(36,27,21,0.96) 100%);
             z-index: 2;
         }
 
@@ -387,7 +372,7 @@
             transform: rotate(-3deg);
             font-weight: 500;
             line-height: 1.1;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
@@ -450,7 +435,7 @@
             right: 0;
             z-index: 99;
             padding: 1rem;
-            background: rgba(5, 5, 5, 0.95);
+            background: rgba(26, 19, 15, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-top: 1px solid var(--line-color);
@@ -565,7 +550,7 @@
         }
 
         .service-card:hover {
-            background-color: rgba(10, 10, 10, 0.3);
+            background-color: rgba(36, 27, 21, 0.3);
         }
 
         .service-card .roman {
@@ -672,7 +657,7 @@
         .menu-card {
             border: 1px solid var(--line-cream);
             border-top: 2px solid var(--line-color);
-            background-color: rgba(10, 10, 10, 0.18);
+            background-color: rgba(36, 27, 21, 0.18);
             padding: 3rem 2.5rem;
             position: relative;
             transition: background-color 0.4s ease, border-top-color 0.4s ease;
@@ -681,7 +666,7 @@
         }
 
         .menu-card:hover {
-            background-color: rgba(10, 10, 10, 0.42);
+            background-color: rgba(36, 27, 21, 0.42);
             border-top-color: var(--accent-copper);
         }
 
@@ -889,12 +874,12 @@
             object-fit: cover;
             display: block;
             transition: transform 0.7s ease, filter 0.5s ease;
-            filter: saturate(0.85) contrast(1.05);
+            filter: brightness(0.92) contrast(1.04);
         }
 
         .gallery-item:hover img {
             transform: scale(1.05);
-            filter: saturate(1) contrast(1.05);
+            filter: brightness(1) contrast(1.04);
         }
 
         .gallery-caption {
@@ -904,7 +889,7 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 1.4rem;
-            background: linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0) 60%);
+            background: linear-gradient(to top, rgba(26, 19, 15, 0.92) 0%, rgba(26, 19, 15, 0) 60%);
             pointer-events: none;
         }
 
@@ -1023,7 +1008,7 @@
         }
 
         .reserve-form-wrap {
-            background: rgba(5, 5, 5, 0.5);
+            background: rgba(26, 19, 15, 0.5);
             border: 1px solid var(--line-cream);
             padding: 3rem 2.5rem;
             position: relative;
@@ -1106,7 +1091,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23C9A961' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 2l6 6 6-6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23C86A2C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 2l6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: right 0.4rem center;
             background-size: 16px 11px;
@@ -1115,7 +1100,7 @@
         }
 
         select:hover {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23D9BD7C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 2l6 6 6-6'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10' fill='none' stroke='%23D88C50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 2l6 6 6-6'/%3E%3C/svg%3E");
         }
 
         select:invalid { color: var(--text-muted); font-style: italic; }
@@ -1522,7 +1507,7 @@
             color: var(--text-muted);
             text-decoration: none;
             transition: color 0.3s ease;
-            border-bottom: 1px dotted rgba(201, 169, 97, 0.3);
+            border-bottom: 1px dotted rgba(200, 106, 44, 0.3);
             padding-bottom: 1px;
         }
 
@@ -1904,7 +1889,7 @@
 
             /* Snapshot tiles + cred numbers — gentle hover */
             .snapshot-item { transition: background-color 0.3s ease; }
-            .snapshot-item:hover { background-color: rgba(10, 10, 10, 0.5); }
+            .snapshot-item:hover { background-color: rgba(36, 27, 21, 0.5); }
 
             /* Submit button shimmer on hover */
             button.submit-btn {
@@ -1947,7 +1932,7 @@
 
     <!-- ===== HERO ===== -->
     <section id="hero" aria-label="Hero section featuring Chef Jerome Tucker">
-        <!-- HERO: using /images/jerome-tucker.png as the placeholder hero portrait. Replace with a dedicated landscape action shot when available — recommended 2400px+ wide, Jerome positioned right-of-center for left-side text overlay clearance. -->
+        <!-- HERO PLACEHOLDER: currently using /images/jerome-tucker.png shared with the about section. Replace with a dedicated hero shot when available. Recommended: landscape orientation, 2400px+ wide, Jerome positioned in the right third of frame so negative space on the left supports the centered title overlay. Action shot in chef whites preferred. -->
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
