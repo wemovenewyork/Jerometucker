@@ -851,64 +851,45 @@
             overflow: hidden;
             background: var(--bg-espresso);
             border: 1px solid var(--line-cream);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 1.5rem;
-            transition: border-color 0.4s ease, background-color 0.4s ease;
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(135deg, transparent 49%, var(--line-color) 49%, var(--line-color) 51%, transparent 51%),
-                linear-gradient(45deg, transparent 49%, var(--line-color) 49%, var(--line-color) 51%, transparent 51%);
-            background-size: 28px 28px;
-            opacity: 0.18;
-            pointer-events: none;
+            transition: border-color 0.4s ease;
         }
 
         .gallery-item:hover {
             border-color: var(--accent-copper);
-            background: rgba(36, 27, 21, 0.7);
         }
 
-        .gallery-item.span-2-cols { grid-column: span 2; }
-        .gallery-item.span-2-rows { grid-row: span 2; }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease, filter 0.5s ease;
+            filter: brightness(0.92) contrast(1.04);
+        }
 
-        .gallery-placeholder {
-            position: relative;
-            z-index: 1;
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1) contrast(1.04);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            inset: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.85rem;
-            max-width: 220px;
+            justify-content: flex-end;
+            padding: 1.4rem;
+            background: linear-gradient(to top, rgba(26, 19, 15, 0.92) 0%, rgba(26, 19, 15, 0) 60%);
+            pointer-events: none;
         }
 
-        .gallery-placeholder .frame-icon {
-            width: 36px;
-            height: 36px;
-            border: 1px solid var(--accent-copper);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-copper);
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 0.85rem;
-            margin-bottom: 0.25rem;
+        .gallery-caption .micro-label {
+            font-size: 0.6rem;
+            margin-bottom: 0.35rem;
+            letter-spacing: 0.25em;
         }
 
-        .gallery-placeholder .micro-label {
-            font-size: 0.55rem;
-            letter-spacing: 0.3em;
-        }
-
-        .gallery-placeholder .name {
+        .gallery-caption .name {
             font-family: var(--font-serif);
             font-size: 1.25rem;
             color: var(--text-cream);
@@ -916,13 +897,8 @@
             letter-spacing: 0.02em;
         }
 
-        .gallery-placeholder .swap-note {
-            font-size: 0.55rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-top: 0.35rem;
-        }
+        .gallery-item.span-2-cols { grid-column: span 2; }
+        .gallery-item.span-2-rows { grid-row: span 2; }
 
         .gallery-fineprint {
             text-align: center;
@@ -2103,67 +2079,59 @@
 
             <div class="gallery-grid stagger">
                 <div class="gallery-item span-2-cols span-2-rows feature-mobile">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">i.</div>
-                        <span class="micro-label">Signature</span>
-                        <div class="name">Smothered Oxtails over Rice</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/seafood-boil.jpg" alt="Cajun garlic butter seafood boil with shrimp, mussels, and crab cake" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Coastal</span>
+                        <div class="name">Cajun Seafood Boil</div>
                     </div>
                 </div>
                 <div class="gallery-item span-2-cols">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">ii.</div>
-                        <span class="micro-label">Comfort</span>
-                        <div class="name">Honey Butter Cornbread</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/broiled-salmon-garlic-noodles.jpg" alt="Broiled salmon over garlic noodles" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Anchor</span>
+                        <div class="name">Broiled Salmon, Garlic Noodles</div>
                     </div>
                 </div>
                 <div class="gallery-item span-2-cols">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">iii.</div>
-                        <span class="micro-label">Soul</span>
-                        <div class="name">Four-Cheese Mac &amp; Cheese</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/lollipop-lamb-chops.jpg" alt="Lollipop lamb chops" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Specialty</span>
+                        <div class="name">Lollipop Lamb Chops</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">iv.</div>
-                        <span class="micro-label">Garden</span>
-                        <div class="name">Collard Greens</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/vegetable-chaufa.jpg" alt="Vegetable chaufa fried rice" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Foundation</span>
+                        <div class="name">Vegetable Chaufa</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">v.</div>
-                        <span class="micro-label">Sweet</span>
-                        <div class="name">Peach Cobbler</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/lobster-tails.jpg" alt="Garlic butter lobster tails" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Coastal</span>
+                        <div class="name">Garlic Butter Lobster Tails</div>
                     </div>
                 </div>
                 <div class="gallery-item span-2-cols span-2-rows feature-mobile">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">vi.</div>
-                        <span class="micro-label">Coastal</span>
-                        <div class="name">Cajun Garlic Butter Seafood Boil</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/bow-tie-cajun-pasta.jpg" alt="Bow tie cajun pasta with chicken and shrimp" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Signature</span>
+                        <div class="name">Bow Tie Cajun Pasta</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">vii.</div>
-                        <span class="micro-label">Crispy</span>
-                        <div class="name">Buttermilk Fried Chicken</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/cajun-steak-shells.jpg" alt="Cajun steak pasta shells" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Comfort</span>
+                        <div class="name">Cajun Steak Shells</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <div class="frame-icon">viii.</div>
-                        <span class="micro-label">House</span>
-                        <div class="name">Shrimp &amp; Grits</div>
-                        <span class="swap-note">Photo Coming</span>
+                    <img src="images/gallery/grilled-pork-chop.jpg" alt="Grilled pork chop with potatoes au gratin and spinach" loading="lazy">
+                    <div class="gallery-caption">
+                        <span class="micro-label">Anchor</span>
+                        <div class="name">Grilled Pork Chop</div>
                     </div>
                 </div>
             </div>
