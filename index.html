@@ -1377,6 +1377,70 @@
             margin: 4rem auto;
         }
 
+        /* Hide celebrity photos beyond the 10th by default; reveal when grid is expanded */
+        .celebrity-grid > .celebrity-photo:nth-child(n+11) {
+            display: none;
+        }
+
+        .celebrity-grid.is-expanded > .celebrity-photo:nth-child(n+11) {
+            display: block;
+            animation: celebrityReveal 0.55s ease forwards;
+        }
+
+        @keyframes celebrityReveal {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .celebrity-grid.is-expanded > .celebrity-photo:nth-child(n+11) {
+                animation: none;
+            }
+        }
+
+        .celebrity-toggle-row {
+            text-align: center;
+            margin: 2rem auto 0 auto;
+            display: none;
+        }
+
+        .celebrity-toggle-row.is-active {
+            display: block;
+        }
+
+        .celebrity-toggle {
+            background: transparent;
+            border: 1px solid var(--line-color);
+            color: var(--accent-copper);
+            padding: 0.85rem 1.85rem;
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .celebrity-toggle:hover {
+            border-color: var(--accent-copper);
+            background: rgba(201, 169, 97, 0.08);
+            color: var(--accent-copper-soft);
+        }
+
+        .celebrity-toggle .icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        .celebrity-grid.is-expanded ~ .celebrity-toggle-row .celebrity-toggle .icon {
+            transform: rotate(180deg);
+        }
+
         @media (max-width: 900px) and (min-width: 601px) {
             .celebrity-grid { grid-template-columns: repeat(3, 1fr); }
         }
@@ -2601,6 +2665,34 @@
                 <div class="celebrity-photo" role="listitem">
                     <img src="images/celebrity-7.jpg" alt="Chef Jerome plating at a curated dinner" loading="lazy">
                 </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-11.jpg" alt="Chef Jerome with a private guest at a curated event" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-12.jpg" alt="Chef Jerome at a private dining engagement" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-13.jpg" alt="Chef Jerome at a curated guest event" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-14.jpg" alt="Chef Jerome at a private dinner with guests" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-15.jpg" alt="Chef Jerome behind the line at a private booking" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-16.jpg" alt="Chef Jerome at a private guest event" loading="lazy">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <img src="images/celebrity-17.jpg" alt="Chef Jerome at an exclusive private engagement" loading="lazy">
+                </div>
+            </div>
+
+            <div class="celebrity-toggle-row" data-celebrity-toggle-row>
+                <button type="button" class="celebrity-toggle" data-celebrity-toggle aria-expanded="false" aria-controls="celebrity-grid-extras">
+                    <span class="celebrity-toggle-label">See More Photos</span>
+                    <span class="icon" aria-hidden="true">&#9662;</span>
+                </button>
             </div>
 
             <hr class="celebrity-divider">
@@ -3023,19 +3115,42 @@
                 else if (e.key === 'ArrowLeft') prev();
             });
 
-            const wireGroup = (selector, captionExtractor) => {
-                const group = buildGroup(selector, captionExtractor);
-                group.forEach((item, i) => {
-                    item.el.setAttribute('role', 'button');
-                    item.el.setAttribute('tabindex', '0');
-                    if (!item.el.getAttribute('aria-label')) {
-                        item.el.setAttribute('aria-label', 'Open larger photo');
+            const wireGroup = (selector, captionExtractor, filterFn) => {
+                const passes = filterFn || (() => true);
+                const allElements = Array.from(document.querySelectorAll(selector));
+
+                const buildLiveGroup = () => {
+                    return allElements
+                        .filter(passes)
+                        .map(el => {
+                            const i = el.querySelector('img');
+                            if (!i || !i.src) return null;
+                            return {
+                                el: el,
+                                src: i.src,
+                                alt: i.alt || '',
+                                caption: captionExtractor(el)
+                            };
+                        })
+                        .filter(Boolean);
+                };
+
+                allElements.forEach(el => {
+                    el.setAttribute('role', 'button');
+                    el.setAttribute('tabindex', '0');
+                    if (!el.getAttribute('aria-label')) {
+                        el.setAttribute('aria-label', 'Open larger photo');
                     }
-                    item.el.addEventListener('click', () => open(group, i));
-                    item.el.addEventListener('keydown', (e) => {
+                    const trigger = () => {
+                        const group = buildLiveGroup();
+                        const idx = group.findIndex(g => g.el === el);
+                        if (idx >= 0) open(group, idx);
+                    };
+                    el.addEventListener('click', trigger);
+                    el.addEventListener('keydown', (e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
-                            open(group, i);
+                            trigger();
                         }
                     });
                 });
@@ -3049,8 +3164,34 @@
                 return name || eyebrow;
             });
 
-            // In Good Company: no caption text, just the image
-            wireGroup('.celebrity-photo', () => '');
+            // In Good Company: skip photos hidden by the See More toggle
+            wireGroup('.celebrity-photo', () => '', (el) => {
+                return getComputedStyle(el).display !== 'none';
+            });
+        })();
+
+        // ===== "See More Photos" toggle for celebrity grid =====
+        (function() {
+            const grid = document.querySelector('.celebrity-grid');
+            const toggleRow = document.querySelector('[data-celebrity-toggle-row]');
+            const toggle = document.querySelector('[data-celebrity-toggle]');
+            if (!grid || !toggleRow || !toggle) return;
+
+            const VISIBLE_COUNT = 10;
+            const total = grid.querySelectorAll('.celebrity-photo').length;
+            if (total <= VISIBLE_COUNT) return;
+
+            toggleRow.classList.add('is-active');
+            const labelEl = toggle.querySelector('.celebrity-toggle-label');
+
+            toggle.addEventListener('click', () => {
+                const expanded = grid.classList.toggle('is-expanded');
+                toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                if (labelEl) labelEl.textContent = expanded ? 'Show Fewer Photos' : 'See More Photos';
+                if (!expanded) {
+                    grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         })();
     </script>
 
