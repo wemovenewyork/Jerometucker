@@ -628,6 +628,208 @@
             padding-top: 2rem;
         }
 
+        /* ===== MENU ===== */
+        #menu {
+            background-color: var(--bg-deep);
+            padding: 12vh 0 10vh 0;
+            position: relative;
+            border-top: 1px solid var(--line-cream);
+            border-bottom: 1px solid var(--line-cream);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .menu-card {
+            border: 1px solid var(--line-cream);
+            border-top: 2px solid var(--line-color);
+            background-color: rgba(36, 27, 21, 0.18);
+            padding: 3rem 2.5rem;
+            position: relative;
+            transition: background-color 0.4s ease, border-top-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            background-color: rgba(36, 27, 21, 0.42);
+            border-top-color: var(--accent-copper);
+        }
+
+        .menu-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .menu-card .roman {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--accent-copper);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .menu-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-cream);
+            margin-bottom: 0.4rem;
+            font-weight: 400;
+        }
+
+        .menu-card .tagline {
+            font-family: var(--font-script);
+            color: var(--accent-copper-soft);
+            font-size: 1.5rem;
+            margin-bottom: 1.75rem;
+            line-height: 1;
+            display: block;
+        }
+
+        /* Sub-category groupings (appetizers, pasta) */
+        .menu-group {
+            padding: 1.1rem 0;
+            border-top: 1px solid var(--line-cream);
+        }
+
+        .menu-group:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .menu-group-name {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-cream);
+            margin-right: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .menu-group-name::after {
+            content: '\2014';
+            margin-left: 0.5rem;
+            color: var(--accent-copper);
+        }
+
+        .menu-group-items {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-cream);
+            line-height: 1.95;
+            opacity: 0.88;
+        }
+
+        .menu-group-items .sep {
+            color: var(--accent-copper);
+            margin: 0 0.4rem;
+            font-weight: 600;
+        }
+
+        /* Salads list */
+        .menu-salads { padding-top: 0.25rem; }
+
+        .menu-salad {
+            padding: 0.95rem 0;
+            border-top: 1px solid var(--line-cream);
+        }
+
+        .menu-salad:first-child {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .menu-salad-name {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-cream);
+            display: block;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+
+        .menu-salad-desc {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Proteins / Sides — clean dashed list */
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-list li {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-cream);
+            padding: 0.6rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            opacity: 0.9;
+            border-top: 1px solid var(--line-cream);
+        }
+
+        .menu-list li:first-child { border-top: none; }
+
+        .menu-list li::before {
+            content: '';
+            width: 8px;
+            height: 1px;
+            background-color: var(--accent-copper);
+            flex-shrink: 0;
+        }
+
+        /* Download CTA row */
+        .menu-cta-row {
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        .menu-cta-note {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text-cream);
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .menu-cta-buttons {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .menu-card { padding: 2.5rem 1.75rem; }
+            .menu-card.full-width { grid-column: auto; }
+        }
+
+        @media (max-width: 600px) {
+            .menu-cta-buttons { flex-direction: column; width: 100%; }
+            .menu-cta-buttons .btn-book { width: 100%; }
+            .menu-card h3 { font-size: 1.45rem; }
+            .menu-group-name { font-size: 1.05rem; display: block; margin-bottom: 0.4rem; }
+            .menu-group-name::after { display: none; }
+        }
+
         /* ===== GALLERY ===== */
         #gallery {
             padding: 12vh 0;
@@ -1614,6 +1816,7 @@
         <nav>
             <ul>
                 <li><a href="#offerings">Offerings</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#gallery">The Plate</a></li>
                 <li><a href="#about">About</a></li>
                 <li class="nav-cta"><a href="#reserve" class="btn-book nav-book-btn">Book Now <span class="arrow">&rarr;</span></a></li>
@@ -1749,6 +1952,142 @@
 
             <div class="offerings-cta-row">
                 <a href="#reserve" class="btn-book">Start Your Booking <span class="arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="micro-label">What's On The Table</span>
+                <h2>The Menu</h2>
+                <span class="script-text" aria-hidden="true">Tasting</span>
+                <p>A working selection &mdash; every menu is built around your event. What follows is the foundation.</p>
+            </div>
+
+            <div class="menu-grid stagger">
+
+                <article class="menu-card full-width">
+                    <span class="roman">i.</span>
+                    <h3>Appetizers</h3>
+                    <span class="tagline">Five ways to begin</span>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Empanadas</span>
+                        <span class="menu-group-items">
+                            Beef <span class="sep">&middot;</span> Chicken <span class="sep">&middot;</span> Crab <span class="sep">&middot;</span> Cheese
+                        </span>
+                    </div>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Wings</span>
+                        <span class="menu-group-items">
+                            Honey Garlic <span class="sep">&middot;</span> Sweet Chili <span class="sep">&middot;</span> Tangy Barbecue <span class="sep">&middot;</span> Buffalo <span class="sep">&middot;</span> Lemon Pepper Hot <span class="sep">&middot;</span> Lemon Pepper Dry <span class="sep">&middot;</span> Barbecue Jerk <span class="sep">&middot;</span> Old Bay
+                        </span>
+                    </div>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Egg Rolls</span>
+                        <span class="menu-group-items">
+                            Turkey Burger <span class="sep">&middot;</span> Chicken Philly <span class="sep">&middot;</span> Philly Cheesesteak <span class="sep">&middot;</span> Shrimp Parm
+                        </span>
+                    </div>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Shrimp 13/15</span>
+                        <span class="menu-group-items">
+                            Sweet Thai Chili <span class="sep">&middot;</span> Crispy Fried <span class="sep">&middot;</span> Broiled Honey Garlic
+                        </span>
+                    </div>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Specialty Plates</span>
+                        <span class="menu-group-items">
+                            Lollipop Lamb Chops <span class="sep">&middot;</span> Jumbo Crab Cakes <span class="sep">&middot;</span> Southern Deviled Eggs <span class="sep">&middot;</span> Ceviche Plantain Cup <span class="sep">&middot;</span> Stuffed Meatballs
+                        </span>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <span class="roman">ii.</span>
+                    <h3>Main Course</h3>
+                    <span class="tagline">House-made comfort</span>
+
+                    <div class="menu-group">
+                        <span class="menu-group-name">Pasta</span>
+                        <span class="menu-group-items">
+                            Rasta Pasta <span class="sep">&middot;</span> Bucatini Alfredo <span class="sep">&middot;</span> Stuffed Shells <span class="sep">&middot;</span> Lasagna <span class="sep">&middot;</span> Bow Tie Cajun Pasta
+                        </span>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <span class="roman">iii.</span>
+                    <h3>Salads</h3>
+                    <span class="tagline">Garden plates</span>
+
+                    <div class="menu-salads">
+                        <div class="menu-salad">
+                            <span class="menu-salad-name">Caesar</span>
+                            <div class="menu-salad-desc">romaine, shaved Parmesan, Caesar dressing, croutons</div>
+                        </div>
+                        <div class="menu-salad">
+                            <span class="menu-salad-name">Cobb</span>
+                            <div class="menu-salad-desc">romaine, ranch, bacon, chicken, eggs, shredded cheese</div>
+                        </div>
+                        <div class="menu-salad">
+                            <span class="menu-salad-name">Southwestern</span>
+                            <div class="menu-salad-desc">romaine, tomatoes, black beans, peppers, corn, tortilla chips, chipotle ranch</div>
+                        </div>
+                        <div class="menu-salad">
+                            <span class="menu-salad-name">Classic House</span>
+                            <div class="menu-salad-desc">mixed greens, carrots, red cabbage, tomatoes, Italian dressing</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <span class="roman">iv.</span>
+                    <h3>Proteins</h3>
+                    <span class="tagline">The anchor</span>
+
+                    <ul class="menu-list">
+                        <li>Braised Short Ribs</li>
+                        <li>Oxtails</li>
+                        <li>Grilled Chicken Breast</li>
+                        <li>Broiled Salmon</li>
+                        <li>Ribeye Steak</li>
+                        <li>Grilled Catfish</li>
+                        <li>Grilled Pork Chops</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <span class="roman">v.</span>
+                    <h3>Sides</h3>
+                    <span class="tagline">The foundation</span>
+
+                    <ul class="menu-list">
+                        <li>Vegetable Chaufa</li>
+                        <li>Southern Baked Mac &amp; Cheese</li>
+                        <li>Garlic Noodles</li>
+                        <li>Garlic Parm Mashed Potatoes</li>
+                        <li>Spanish Rice</li>
+                        <li>Roasted Asparagus</li>
+                        <li>Garlic Broccoli</li>
+                        <li>Brussels Sprouts</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <div class="menu-cta-row">
+                <p class="menu-cta-note">Every menu is fully customizable for your event.</p>
+                <div class="menu-cta-buttons">
+                    <a href="/Romey-Rome-Menu.pdf" class="btn-book" download target="_blank" rel="noopener" aria-label="Download the full Romey Rome menu as a PDF">Download Full Menu (PDF) <span class="arrow">&rarr;</span></a>
+                    <a href="#reserve" class="btn-book outline">Build Your Booking <span class="arrow">&rarr;</span></a>
+                </div>
             </div>
         </div>
     </section>
@@ -2152,6 +2491,7 @@
             <div class="footer-links">
                 <a href="#reserve">Book Now</a>
                 <a href="#offerings">Offerings</a>
+                <a href="#menu">Menu</a>
                 <a href="https://www.instagram.com/romeyromethechef/" target="_blank" rel="noopener">Instagram</a>
                 <a href="https://bobbybrownfoods.com/culinary-ambassadors/chef-jerome-tucker/" target="_blank" rel="noopener">BBF Ambassador</a>
             </div>
