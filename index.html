@@ -1246,6 +1246,142 @@
             color: var(--text-cream);
         }
 
+        /* ===== CELEBRITY PROOF (inside #credentials) ===== */
+        .celebrity-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 1rem auto;
+        }
+
+        .celebrity-header .micro-label {
+            display: block;
+            margin-bottom: 0.65rem;
+        }
+
+        .celebrity-header h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-cream);
+            line-height: 1.05;
+            margin: 0;
+        }
+
+        .celebrity-header .script-text {
+            display: block;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            transform: rotate(-3deg);
+            margin-top: 0.55rem;
+            line-height: 1.1;
+            font-weight: 500;
+        }
+
+        .celebrity-header p {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--text-cream);
+            opacity: 0.9;
+            max-width: 560px;
+            margin: 1.25rem auto 0 auto;
+            line-height: 1.6;
+        }
+
+        .celebrity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+            max-width: 1100px;
+            margin: 4rem auto 5rem auto;
+        }
+
+        .celebrity-photo {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background: var(--bg-deep);
+            border: 1px solid var(--line-cream);
+            cursor: default;
+            transition: border-color 0.4s ease;
+        }
+
+        .celebrity-photo:hover {
+            border-color: var(--accent-copper);
+        }
+
+        .celebrity-photo img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(15%);
+            transition: filter 0.4s ease, transform 0.4s ease;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .celebrity-photo:hover img {
+                transform: scale(1.03);
+                filter: grayscale(0%);
+            }
+        }
+
+        /* Copper L-corner ornament unifying photos with varied lighting */
+        .celebrity-photo::before,
+        .celebrity-photo::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: var(--accent-copper);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .celebrity-photo::before { width: 12px; height: 1px; }
+        .celebrity-photo::after  { width: 1px;  height: 12px; }
+
+        /* Placeholder visible only until photos are uploaded; img sits z-index 1 above */
+        .celebrity-photo .placeholder-text {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+            font-size: 0.55rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .celebrity-divider {
+            border: none;
+            border-top: 1px solid var(--line-color);
+            width: 100px;
+            margin: 4rem auto;
+        }
+
+        @media (max-width: 900px) and (min-width: 601px) {
+            .celebrity-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .celebrity-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+                margin: 3rem auto 4rem auto;
+            }
+            .celebrity-photo::before { top: 6px; left: 6px; width: 8px; }
+            .celebrity-photo::after  { top: 6px; left: 6px; height: 8px; }
+            .celebrity-divider { margin: 3rem auto; }
+        }
+
         /* ===== FINAL CTA ===== */
         #final-cta {
             padding: 14vh 0;
@@ -2319,6 +2455,52 @@
     <!-- ===== CREDENTIALS ===== -->
     <section id="credentials">
         <div class="container">
+
+            <div class="celebrity-header reveal">
+                <span class="micro-label">In Good Company</span>
+                <h3>The Table Has Hosted</h3>
+                <span class="script-text" aria-hidden="true">VIPs</span>
+                <p>A working selection of private engagements. Discretion is part of the service &mdash; names withheld by request.</p>
+            </div>
+
+            <!-- Replace celebrity-1.jpg through celebrity-N.jpg with actual photos. Square crops work best (1000x1000px ideal). Add or remove .celebrity-photo divs to match the photo count — the grid auto-flows. -->
+            <div class="celebrity-grid stagger" role="list">
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-1.jpg" alt="Chef Jerome at a private engagement" width="1000" height="1000" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-2.jpg" alt="Chef Jerome on-site at an exclusive event" width="1000" height="1000" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-3.jpg" alt="Chef Jerome serving a private dinner" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-4.jpg" alt="Chef Jerome plating at a curated dinner" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-5.jpg" alt="Chef Jerome with a private dining guest" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-6.jpg" alt="Chef Jerome behind the line at a private booking" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-7.jpg" alt="Chef Jerome at a private event" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+                <div class="celebrity-photo" role="listitem">
+                    <span class="placeholder-text">Photo Coming</span>
+                    <img src="images/celebrity-8.jpg" alt="Chef Jerome captured during private dinner service" width="1000" height="1000" loading="lazy" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <hr class="celebrity-divider">
+
             <div class="creds-grid stagger">
                 <div class="cred-item">
                     <div class="num">32K+</div>
