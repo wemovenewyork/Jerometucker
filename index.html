@@ -98,6 +98,10 @@
     <link rel="preload" as="image" href="/images/jerome-hero.png?v=20260506b">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
 
+    <!-- Calendly inline embed -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         /*
           PALETTE: Black / Gold / White (active)
@@ -2099,6 +2103,190 @@
             }
             button.submit-btn:hover::after { left: 100%; }
         }
+
+        /* ===== SCHEDULE / CALENDLY ===== */
+        #schedule {
+            background-color: var(--bg-deep);
+            padding: 12vh 0 8vh 0;
+            position: relative;
+        }
+
+        #schedule .section-header { margin-bottom: 4rem; }
+
+        /* Two-step indicator */
+        .schedule-steps {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .schedule-step {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            border: 1px solid var(--line-cream);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-copper);
+            color: var(--bg-deep);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .step-label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent-copper);
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .step-body p {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-cream);
+            font-weight: 300;
+        }
+
+        /* Calendly widget */
+        .calendly-inline-widget {
+            margin: 0 auto 4rem auto;
+            max-width: 1000px;
+            border: 1px solid var(--line-cream);
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* Deposit block */
+        .deposit-block {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .deposit-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .deposit-divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--line-color);
+        }
+
+        .deposit-divider-text {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-copper);
+            font-weight: 500;
+        }
+
+        .deposit-card {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem;
+            border: 1px solid var(--line-cream);
+            border-top: 3px solid var(--accent-copper);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .deposit-card-left .micro-label {
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .deposit-card-left h3 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            letter-spacing: 0.04em;
+            color: var(--text-cream);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .deposit-note {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            max-width: 380px;
+        }
+
+        .deposit-card-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .deposit-secured {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .deposit-help {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .deposit-help a {
+            color: var(--accent-copper);
+            text-decoration: underline;
+            text-decoration-color: var(--line-color);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.3s ease;
+        }
+
+        .deposit-help a:hover {
+            text-decoration-color: var(--accent-copper);
+        }
+
+        @media (max-width: 900px) {
+            .schedule-steps { grid-template-columns: 1fr; gap: 1rem; }
+            .deposit-card { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; text-align: center; }
+            .deposit-card-left .deposit-note { margin-left: auto; margin-right: auto; }
+            .calendly-inline-widget { height: 800px !important; }
+        }
+
+        @media (max-width: 600px) {
+            #schedule { padding: 8vh 0 6vh 0; }
+            .deposit-card h3 { font-size: 2.5rem; }
+            .deposit-card .btn-book { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -2113,8 +2301,10 @@
             <ul>
                 <li><a href="#offerings">Offerings</a></li>
                 <li><a href="#menu">Menu</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
                 <li><a href="#gallery">Recent Plates</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
                 <li class="nav-cta"><a href="#reserve" class="btn-book nav-book-btn">Book Now <span class="arrow">&rarr;</span></a></li>
             </ul>
         </nav>
@@ -2459,6 +2649,98 @@
         </div>
     </section>
 
+    <!--
+      SCHEDULE SECTION ACTIVATION CHECKLIST:
+
+      1. Replace the Calendly placeholder URL when Jerome's account is configured:
+         - Find: data-url="https://calendly.com/romeyromethechef/booking"
+         - Replace with the actual Calendly event URL provided by Jerome
+
+      2. Verify the Square deposit link is the current $250 deposit URL.
+         - Current: https://checkout.square.site/merchant/MLP7H2BEJTENH/checkout/Q7BXHBBAQLRKWH7OUMA52DJU
+         - If Jerome creates a new deposit link, update the href in .deposit-card-right .btn-book
+
+      3. After Calendly is live, configure Calendly's confirmation page redirect:
+         - In Calendly settings -> Event type -> Confirmation
+         - Set "Display confirmation page" to "Redirect to an external site"
+         - URL: the Square checkout link above
+         - This makes the deposit step automatic instead of requiring a second click
+         - Requires Calendly Premium ($10/month). Free tier users can use the existing two-button flow.
+
+      4. After production verification, optionally update primary CTAs to redirect to #schedule:
+         - Hero "Book Your Date" -> currently links to #reserve, can be swapped to #schedule
+         - Pricing page "Request a Custom Quote" -> currently links to /index.html#reserve, can be swapped to /index.html#schedule
+         - Do NOT swap these until the new flow has been tested with at least one real booking.
+    -->
+    <section id="schedule">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <span class="micro-label">Lock Your Date</span>
+                <h2>Schedule &amp; Reserve</h2>
+                <span class="script-text" aria-hidden="true">Booking</span>
+                <p>Pick an open date, secure it with a $250 non-refundable deposit, and we'll be in touch with menu details. For custom catering, out-of-state events, or group bookings, use the inquiry form below.</p>
+            </div>
+
+            <div class="schedule-steps stagger">
+                <div class="schedule-step">
+                    <div class="step-num" aria-hidden="true">1</div>
+                    <div class="step-body">
+                        <span class="step-label">Pick A Date</span>
+                        <p>View Jerome's open dates and select the one that works.</p>
+                    </div>
+                </div>
+                <div class="schedule-step">
+                    <div class="step-num" aria-hidden="true">2</div>
+                    <div class="step-body">
+                        <span class="step-label">Secure It</span>
+                        <p>Pay the $250 non-refundable deposit through our secure Square checkout. Your date locks immediately.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER: Replace data-url with the actual Calendly link once Jerome's account is configured. Format: https://calendly.com/[username]/[event-type] -->
+            <div class="calendly-inline-widget"
+                 data-url="https://calendly.com/romeyromethechef/booking"
+                 style="min-width:320px;height:700px;">
+            </div>
+
+            <div class="deposit-block">
+                <div class="deposit-divider" aria-hidden="true">
+                    <span class="deposit-divider-line"></span>
+                    <span class="deposit-divider-text">After Booking</span>
+                    <span class="deposit-divider-line"></span>
+                </div>
+
+                <div class="deposit-card">
+                    <div class="deposit-card-left">
+                        <span class="micro-label">Deposit</span>
+                        <h3>$250</h3>
+                        <p class="deposit-note">Non-refundable. Locks your date. Applied to your final balance.</p>
+                    </div>
+                    <div class="deposit-card-right">
+                        <a href="https://checkout.square.site/merchant/MLP7H2BEJTENH/checkout/Q7BXHBBAQLRKWH7OUMA52DJU?src=sheet"
+                           class="btn-book"
+                           target="_blank"
+                           rel="noopener"
+                           aria-label="Pay $250 deposit through Square secure checkout">
+                            Pay Deposit Now <span class="arrow">&rarr;</span>
+                        </a>
+                        <p class="deposit-secured">
+                            <span class="lock-icon" aria-hidden="true">&#128274;</span>
+                            Secure checkout via Square
+                        </p>
+                    </div>
+                </div>
+
+                <p class="deposit-help">
+                    Booked your date but having trouble with the payment? <a href="#reserve">Send us a quick note</a> and we'll resolve it.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ===== RESERVE ===== -->
     <section id="reserve">
         <div class="container">
@@ -2469,7 +2751,7 @@
                     <h2>Secure Your Date</h2>
                     <span class="script-text" aria-hidden="true">Inquiries</span>
                     <p class="body-copy">
-                        Tell us about the occasion. Every booking starts with a conversation &mdash; once we understand the moment you're creating, we'll respond with availability, pricing, and what's needed to lock the date.
+                        For custom catering, out-of-state events, group bookings, or anything not on the calendar above &mdash; start here. Tell us about the occasion and we'll respond with a tailored quote.
                     </p>
 
                     <div class="next-steps">
@@ -2863,7 +3145,9 @@
             </div>
             <div class="footer-links">
                 <a href="#reserve">Book Now</a>
+                <a href="/index.html#schedule">Schedule</a>
                 <a href="#offerings">Offerings</a>
+                <a href="/pricing.html">Pricing</a>
                 <a href="#menu">Menu</a>
                 <a href="https://www.instagram.com/romeyromethechef/" target="_blank" rel="noopener">Instagram</a>
                 <a href="https://bobbybrownfoods.com/culinary-ambassadors/chef-jerome-tucker/" target="_blank" rel="noopener">BBF Ambassador</a>
