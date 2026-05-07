@@ -1528,7 +1528,6 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 960px) {
-            nav ul li:not(.nav-cta) { display: none; }
             .nav-book-btn { padding: 0.75rem 1.4rem !important; font-size: 0.6rem !important; }
         }
 
@@ -2400,6 +2399,185 @@
             .pricing-hero-subtitle { font-size: 1rem; }
             .pricing-intro-inner p { font-size: 1.05rem; }
         }
+
+        /* ===== HAMBURGER BUTTON (visible only on mobile) ===== */
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--accent-copper);
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            cursor: pointer;
+            position: relative;
+            z-index: 102;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-toggle:hover {
+            background: rgba(201, 169, 97, 0.08);
+        }
+
+        .mobile-nav-toggle .hamburger-line {
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: var(--accent-copper);
+            margin: 4px auto;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+            transform: translateY(5.5px) rotate(45deg);
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+            transform: translateY(-5.5px) rotate(-45deg);
+        }
+
+        /* ===== MOBILE NAV OVERLAY ===== */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            background: var(--bg-deep);
+            z-index: 101;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-nav-overlay[aria-hidden="false"] {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .mobile-nav-inner {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 2rem 4rem 2rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: transparent;
+            border: 1px solid var(--accent-copper);
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 103;
+        }
+
+        .mobile-nav-close .close-line {
+            display: block;
+            width: 18px;
+            height: 1.5px;
+            background: var(--accent-copper);
+            position: absolute;
+        }
+
+        .mobile-nav-close .close-line:nth-child(1) { transform: rotate(45deg); }
+        .mobile-nav-close .close-line:nth-child(2) { transform: rotate(-45deg); }
+
+        .mobile-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 3rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            width: 100%;
+        }
+
+        .mobile-nav-list a {
+            font-family: var(--font-serif);
+            font-size: 1.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav-list a:hover {
+            color: var(--accent-copper);
+        }
+
+        .mobile-nav-list a.active {
+            color: var(--accent-copper);
+        }
+
+        .mobile-nav-list a.mobile-nav-cta {
+            background: var(--accent-copper);
+            color: var(--bg-deep);
+            padding: 1.1rem 2.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            font-weight: 500;
+            border: 1px solid var(--accent-copper);
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .mobile-nav-list a.mobile-nav-cta:hover {
+            background: var(--accent-copper-soft);
+            color: var(--bg-deep);
+        }
+
+        .mobile-nav-footer {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 2;
+            border-top: 1px solid var(--line-cream);
+            padding-top: 2rem;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .mobile-nav-footer a {
+            color: var(--accent-copper);
+            text-decoration: none;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            nav > ul { display: none; }
+            .mobile-nav-toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        body.mobile-nav-open { overflow: hidden; }
     </style>
 </head>
 <body>
@@ -2420,7 +2598,34 @@
                 <li class="nav-cta"><a href="/index.html#reserve" class="btn-book nav-book-btn">Book Now <span class="arrow">&rarr;</span></a></li>
             </ul>
         </nav>
+        <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </header>
+
+    <div class="mobile-nav-overlay" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav-inner">
+            <button class="mobile-nav-close" aria-label="Close navigation menu">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+            </button>
+            <ul class="mobile-nav-list">
+                <li><a href="/index.html#offerings">Offerings</a></li>
+                <li><a href="/index.html#menu">Menu</a></li>
+                <li><a href="/pricing.html" class="active">Pricing</a></li>
+                <li><a href="/index.html#gallery">Recent Plates</a></li>
+                <li><a href="/index.html#about">About</a></li>
+                <li><a href="/index.html#schedule">Schedule</a></li>
+                <li><a href="/index.html#reserve" class="mobile-nav-cta">Book Now &rarr;</a></li>
+            </ul>
+            <div class="mobile-nav-footer">
+                <p>Bronx, NY &middot; Available Nationwide</p>
+                <a href="https://www.instagram.com/romeyromethechef/" target="_blank" rel="noopener">@romeyromethechef</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== COMPACT HERO ===== -->
     <section id="pricing-hero" aria-label="Pricing overview">
@@ -2850,6 +3055,49 @@
     <div class="mobile-cta">
         <a href="/index.html#reserve" class="btn-book">Start Your Inquiry <span class="arrow">&rarr;</span></a>
     </div>
+
+    <script>
+        (function() {
+            const toggle = document.querySelector('.mobile-nav-toggle');
+            const overlay = document.querySelector('.mobile-nav-overlay');
+            const close = document.querySelector('.mobile-nav-close');
+            const links = document.querySelectorAll('.mobile-nav-list a');
+            const body = document.body;
+
+            if (!toggle || !overlay) return;
+
+            function openNav() {
+                toggle.setAttribute('aria-expanded', 'true');
+                overlay.setAttribute('aria-hidden', 'false');
+                body.classList.add('mobile-nav-open');
+            }
+
+            function closeNav() {
+                toggle.setAttribute('aria-expanded', 'false');
+                overlay.setAttribute('aria-hidden', 'true');
+                body.classList.remove('mobile-nav-open');
+            }
+
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                isOpen ? closeNav() : openNav();
+            });
+
+            if (close) {
+                close.addEventListener('click', closeNav);
+            }
+
+            links.forEach(link => {
+                link.addEventListener('click', closeNav);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                    closeNav();
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>
